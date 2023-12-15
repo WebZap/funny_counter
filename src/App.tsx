@@ -1,7 +1,8 @@
 import Button from './components/Button/Button'
-import { CounterContextProvider } from './context/CounterContext'
+import CombineProviders from './context/CombineProviders'
+import { CounterContextProvider } from './context/context.items/CounterContext'
 import React from 'react'
-import { TimerContextProvider } from './context/TimerContext'
+import { TimerContextProvider } from './context/context.items/TimerContext'
 import WindowNavigation from './components/WindowNavigation/WindowNavigation'
 import WindowResult from './components/WindowResult/WindowResult'
 import s from './App.module.scss'
@@ -17,12 +18,13 @@ const App: React.FC = () => {
 					border_radius='35px'
 					text='Change Theme'
 				/>
-				<CounterContextProvider>
-					<TimerContextProvider>
-						<WindowResult />
-						<WindowNavigation />
-					</TimerContextProvider>
-				</CounterContextProvider>
+				<CombineProviders>
+					<WindowResult />
+					<WindowNavigation />
+				</CombineProviders>
+				{/* <CounterContextProvider>
+					<TimerContextProvider></TimerContextProvider>
+				</CounterContextProvider> */}
 			</div>
 		</div>
 	)

@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react'
 
-import { CounterContext } from '../../../context/CounterContext'
-import { TimerContext } from '../../../context/TimerContext'
+import { CounterContext } from '../../../context/context.items/CounterContext'
+import { TimerContext } from '../../../context/context.items/TimerContext'
 import s from './ProgressRow.module.scss'
 
 const ProgressRow: FC = () => {

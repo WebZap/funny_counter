@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react'
 
-import { CounterContext } from '../../../context/CounterContext'
+import { CounterContext } from '../../../context/context.items/CounterContext'
 import s from './ScoreWindow.module.scss'
 import { useCount } from '../../../hooks/useCount'
 

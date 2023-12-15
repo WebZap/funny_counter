@@ -5,7 +5,7 @@ import s from './UserName.module.scss'
 const UserName: FC = () => {
 	return (
 		<div className={s.container}>
-			<p>Запорожцев П.С</p>
+			<p>creator webZap</p>
 		</div>
 	)
 }

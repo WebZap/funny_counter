@@ -1,8 +1,8 @@
 import React, { FC, useContext } from 'react'
 
 import Button from '../../Button/Button'
-import { CounterContext } from '../../../context/CounterContext'
-import { TimerContext } from '../../../context/TimerContext'
+import { CounterContext } from '../../../context/context.items/CounterContext'
+import { TimerContext } from '../../../context/context.items/TimerContext'
 import { log } from 'console'
 import s from './CounterRow.module.scss'
 import { useCount } from '../../../hooks/useCount'

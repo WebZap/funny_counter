@@ -1,7 +1,8 @@
 import { FC, ReactNode, createContext } from 'react'
-import { IUserCount, useCount } from '../hooks/useCount'
+import { IUseScore, useScore } from '../../hooks/useScore'
+import { IUserCount, useCount } from '../../hooks/useCount'
 
-interface ICounterContext extends IUserCount {}
+interface ICounterContext extends IUserCount, IUseScore {}
 export const CounterContext = createContext<ICounterContext | undefined>(
 	undefined
 )
@@ -11,7 +12,10 @@ export const CounterContextProvider: FC<{ children: ReactNode }> = ({
 }) => {
 	const { increment, decrement, count, width, level, resetCounter, color } =
 		useCount(0)
+	const { saveUserScore, scoreItems } = useScore()
 	const valueContext: ICounterContext = {
+		saveUserScore,
+		scoreItems,
 		count,
 		level,
 		width,

@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react'
 
 import Button from '../Button/Button'
 import CounterRow from './CounterRow/CounterRow'
-import { TimerContext } from '../../context/TimerContext'
+import { TimerContext } from '../../context/context.items/TimerContext'
 import s from './WindowNavigation.module.scss'
 
 const WindowNavigation: FC = () => {

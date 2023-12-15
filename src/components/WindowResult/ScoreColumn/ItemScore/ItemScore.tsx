@@ -2,10 +2,16 @@ import React, { FC } from 'react'
 
 import s from './ItemScore.module.scss'
 
-const ItemScore: FC = () => {
+interface IItemScore {
+	num: number
+	lvl: number
+	count: number
+}
+
+const ItemScore: FC<IItemScore> = ({ lvl, count, num }) => {
 	return (
 		<div className={s.container}>
-			<p>ItemScore</p>
+			<p>{`${num}. Level - ${lvl} Count - ${count}`}</p>
 		</div>
 	)
 }

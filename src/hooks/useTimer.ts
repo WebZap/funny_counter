@@ -1,6 +1,6 @@
 import { FC, useContext, useState } from 'react'
 
-import { CounterContext } from '../context/CounterContext'
+import { CounterContext } from '../context/context.items/CounterContext'
 import { log } from 'console'
 
 export interface IUseTimer {
@@ -11,7 +11,8 @@ export interface IUseTimer {
 }
 
 export const useTimer = (initSeconds: number): IUseTimer => {
-	const { resetCounter } = useContext(CounterContext)
+	const { saveUserScore } = useContext(CounterContext)
+	const { resetCounter, level, count } = useContext(CounterContext)
 	const [seconds, setSeconds] = useState(initSeconds)
 	const [active, setActive] = useState(false)
 	const [interval, setInter] = useState<NodeJS.Timeout | null>(null)
@@ -22,7 +23,8 @@ export const useTimer = (initSeconds: number): IUseTimer => {
 		clearInterval(interval)
 		resetCounter()
 		setActive(false)
-		setSeconds(60)
+		setSeconds(30)
+		saveUserScore(level, count)
 	}
 
 	const startTimer = () => {
@@ -31,6 +33,7 @@ export const useTimer = (initSeconds: number): IUseTimer => {
 			setSeconds(prev => {
 				if (prev === 0) {
 					clearInterval(intervalTimer)
+					console.log(level, count)
 					stopTimer()
 				}
 				return prev - 1
