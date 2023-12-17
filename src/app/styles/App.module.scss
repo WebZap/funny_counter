@@ -1,0 +1,20 @@
+.center {
+  padding-left: calc(50% - 170px);
+  padding-right: calc(50% - 170px);
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+}
+
+.containerNav{
+  display: flex;
+}
